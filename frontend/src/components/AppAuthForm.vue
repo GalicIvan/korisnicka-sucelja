@@ -42,20 +42,20 @@ async function submit() {
 </script>
 
 <template>
-  <form class="form pa-xl" @submit.prevent="submit">
-    <h2 class="title mb-md">{{ isSignInMode ? 'Sign in' : 'Sign up' }}</h2>
-    <div class="mb-md">
-      <div v-if="!isSignInMode" class="flex gap-sm mb-sm">
+  <form class="auth-form" @submit.prevent="submit">
+    <h2 class="form-title">{{ isSignInMode ? 'Sign in' : 'Sign up' }}</h2>
+    <div class="input-fields">
+      <div v-if="!isSignInMode" class="input-group">
         <AppInput id="firstName" label="First name" v-model="firstName" />
         <AppInput id="lastName" label="Last name" v-model="lastName" />
       </div>
-      <AppInput id="email" label="Email" v-model="email" class="mb-sm" />
+      <AppInput id="email" label="Email" v-model="email" />
       <AppInput id="password" type="password" label="Password" v-model="password" />
     </div>
-    <AppButton type="submit" primary :label="isSignInMode ? 'Sign in' : 'Sign up'" class="mb-sm" />
+    <AppButton type="submit" primary :label="isSignInMode ? 'Sign in' : 'Sign up'" />
     <p v-if="isSubmitting">...Submitting</p>
-    <p class="toggle">
-      {{ isSignInMode ? 'New to Netflix?' : 'Already have an account?' }}
+    <p class="toggle-text">
+      {{ isSignInMode ? 'New to Gordon Ramsey?' : 'Already have an account?' }}
       <a class="toggle-link" @click="isSignInMode = !isSignInMode">
         {{ isSignInMode ? 'Sign up now.' : 'Sign in.' }}
       </a>
@@ -63,29 +63,79 @@ async function submit() {
   </form>
 </template>
 
-<style lang="css" scoped>
-.form {
-  background-image: var(--gradient-bg);
-  width: 448px;
-  max-width: 448px;
-  border-radius: 9px;
+<style scoped>
+.auth-form {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.title {
-  font-size: 36px;
-  font-weight: 600;
+.form-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
 }
 
-.toggle {
-  color: #737373;
+.input-fields {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.input-group {
+  display: flex;
+  gap: 15px;
+}
+
+.toggle-text {
+  font-size: 14px;
+  color: #555;
 }
 
 .toggle-link {
-  color: #fff;
+  color: #007bff;
   cursor: pointer;
 }
 
 .toggle-link:hover {
   text-decoration: underline;
+}
+
+.auth-form button {
+  background-color: #007bff;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 12px 20px;
+  border-radius: 6px;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 10px; /* Dodana margina između buttona i prethodnih input polja */
+  margin-bottom: 15px; /* Dodana margina između buttona i tekstualnih linkova */
+}
+
+.auth-form button:hover {
+  background-color: #0056b3;
+}
+
+.auth-form .form-title {
+  text-align: center;
+}
+
+.auth-form input {
+  margin-bottom: 15px;
+}
+
+.auth-form p {
+  text-align: center;
 }
 </style>

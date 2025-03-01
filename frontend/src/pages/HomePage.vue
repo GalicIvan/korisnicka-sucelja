@@ -1,6 +1,21 @@
 <template>
-  HOME PAGE
+  <div>
+    <HeroSection />
+    <hr>
+    <RecipeCards />
+    <hr>
+    <AddRecipe />
+    <hr>
+    <ContactForm />
+    <hr>
+    <FooterSection />
+  </div>
 </template>
 
 <script setup>
+import HeroSection from '@/components/HeroSection.vue';
+import RecipeCards from '@/components/RecipeCards.vue';
+import AddRecipe from '@/components/AddRecipe.vue';
+import ContactForm from '@/components/ContactForm.vue';
+import FooterSection from '@/components/FooterSection.vue';
 </script>
