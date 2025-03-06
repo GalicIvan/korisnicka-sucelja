@@ -24,8 +24,8 @@
 }
 
 body {
-  font-family: 'Lato', serif;
-  background-color: var(--app-bg);
+  /* font-family: 'Lato', serif; */
+  background-color: rgb(240, 246, 213);
   color: var(--on-app-bg);
   height: 100vh;
   overflow-x: hidden;
