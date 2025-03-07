@@ -6,25 +6,38 @@
       </div>
     </div>
   </div>
+
+  <header class="header">
+    <nav class="nav">
+      <ul>
+        <li><a href="#">Naši recepti</a></li>
+        <li><a href="#">O nama</a></li>
+      </ul>
+    </nav>
+  </header>
 </template>
 
 <style scoped>
 div {
   height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .kitchen {
-  background-image: url('@/assets/img/kitchen.jpg');
+  background-image: url('@/assets/img/bg.jpg');
   background-size: cover;
   background-position: center;
-  height: 90vh;
-  width: 90%;
+  height: 100vh;
+  width: 100%;
   position: relative;
-  z-index: -1;
+  z-index: -5;
   margin: 0%;
   background-repeat: no-repeat;
   overflow: hidden;
-  border-radius: 20px;
+  /* border-radius: 20px; */
+  /* background-color: rgba(0, 0, 0, 0.6); */
 }
 
 .kitchen::before {
@@ -41,11 +54,11 @@ div {
   text-align: center;
   color: rgb(104, 104, 104);
   padding: 50px 20px;
-  background-color: rgba(255, 255, 255, 0.914);
-  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 100px;
   max-width: 800px;
-  margin: 0 auto;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 4);
+  margin: auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 5);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -75,9 +88,35 @@ div {
 }
 
 .overlay {
-  background-color: rgba(0, 0, 0, 0.4);
+  /* background-color: rgba(0, 0, 0, 0.4); */
   padding: 20px;
   border-radius: 8px;
   color: white;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background-color: rgba(255, 255, 255, 0.7);
+  color: black;
+  position: fixed; /* Header ostaje na vrhu */
+  width: 100%;
+  height: 15px;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.nav a {
+  text-decoration: none;
+  color: black;
+}
+
+.nav a:hover {
+  color: rgb(137, 129, 13);
+  /* font-weight: bold; */
+  text-transform: uppercase;
+  cursor: pointer;
 }
 </style>
