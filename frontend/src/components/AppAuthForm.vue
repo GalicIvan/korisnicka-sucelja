@@ -55,7 +55,7 @@ async function submit() {
     <AppButton type="submit" primary :label="isSignInMode ? 'Sign in' : 'Sign up'" />
     <p v-if="isSubmitting">...Submitting</p>
     <p class="toggle-text">
-      {{ isSignInMode ? 'New to Gordon Ramsey?' : 'Already have an account?' }}
+      {{ isSignInMode ? 'New to Recepies?' : 'Already have an account?' }}
       <a class="toggle-link" @click="isSignInMode = !isSignInMode">
         {{ isSignInMode ? 'Sign up now.' : 'Sign in.' }}
       </a>
@@ -65,7 +65,7 @@ async function submit() {
 
 <style scoped>
 .auth-form {
-  background-color: #fff;
+  background-color: white;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   padding: 40px;
@@ -80,7 +80,7 @@ async function submit() {
 .form-title {
   font-size: 28px;
   font-weight: bold;
-  color: #333;
+  color: black;
   margin-bottom: 20px;
 }
 
@@ -109,7 +109,7 @@ async function submit() {
 }
 
 .auth-form button {
-  background-color: #007bff;
+  background-color: blue;
   color: white;
   font-size: 16px;
   font-weight: bold;

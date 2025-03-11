@@ -16,9 +16,9 @@ const props = defineProps({
     type: String,
     required: true,
   },
-})
+});
 
-const emit = defineEmits(['update:modelValue'])
+const emit = defineEmits(['update:modelValue']);
 </script>
 
 <template>
@@ -42,12 +42,13 @@ const emit = defineEmits(['update:modelValue'])
 
 .input {
   display: block;
+  margin: 10px;
   border: none;
   border-radius: 9px;
   width: 100%;
   font-size: 16px;
-  color: white;
-  background-color: rgba(64, 64, 64, 0.5);
+  color: black;
+  background-color: whitesmoke;
 }
 
 .input:focus {
@@ -55,6 +56,7 @@ const emit = defineEmits(['update:modelValue'])
 }
 
 .label {
+  color: black;
   position: absolute;
   top: 16px;
   left: 24px;
