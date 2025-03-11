@@ -51,6 +51,7 @@
   </div>
 </template>
 
+
 <script setup>
 import { ref } from 'vue'
 import { useRecipeStore } from '@/stores/RecipeStore'
@@ -109,6 +110,13 @@ const saveRecipe = async () => {
 </script>
 
 <style scoped>
+/* Postavljanje modernog fonta */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
 /* Wrapper za centriranje dugmeta i formu */
 .wrapper {
   height: 30rem;
@@ -119,16 +127,17 @@ const saveRecipe = async () => {
   flex-direction: column;
   gap: 2rem;
   text-align: center;
+  padding: 2rem;
 }
 
 /* Header tekst iznad dugmeta */
 .header-text {
-  font-family: 'Roboto', sans-serif;
+  color: #1f2937;
 }
 
 .main-title {
-  font-size: 2rem;
-  font-weight: bold;
+  font-size: 2.5rem;
+  font-weight: 600;
   color: #1f2937; /* Tamno siva */
   margin-bottom: 0.5rem;
 }
@@ -136,6 +145,7 @@ const saveRecipe = async () => {
 .sub-title {
   font-size: 1.125rem;
   color: #4b5563; /* Siva boja */
+  margin-bottom: 2rem;
 }
 
 /* Stil za dugme za otvaranje modala */
@@ -164,6 +174,7 @@ const saveRecipe = async () => {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  width: 100%;
 }
 
 /* Inputi unutar forme */
@@ -171,6 +182,12 @@ const saveRecipe = async () => {
   border: 1px solid #d1d5db;
   border-radius: 8px;
   padding: 0.75rem;
+  transition: border 0.3s ease;
+}
+
+.form-input:focus {
+  border: 1px solid #38bdf8;
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.3);
 }
 
 /* Sastojci i upute */
@@ -178,6 +195,7 @@ const saveRecipe = async () => {
   display: flex;
   gap: 10px;
   align-items: center;
+  margin-bottom: 1rem;
 }
 
 /* Dugme za uklanjanje sastojka i uputa */
@@ -187,6 +205,7 @@ const saveRecipe = async () => {
   padding: 0.5rem 1rem;
   border-radius: 50%;
   font-size: 1rem;
+  cursor: pointer;
 }
 
 .remove-btn:hover {
@@ -200,6 +219,7 @@ const saveRecipe = async () => {
   padding: 0.75rem 1.5rem;
   border-radius: 50px;
   font-size: 1rem;
+  cursor: pointer;
 }
 
 .add-btn:hover {
@@ -231,3 +251,4 @@ const saveRecipe = async () => {
   background-color: #22d3ee;
 }
 </style>
+
