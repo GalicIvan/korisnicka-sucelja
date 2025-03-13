@@ -1,13 +1,9 @@
 <template>
   <div>
     <HeroSection />
-    <hr>
     <RecipeCards />
-    <hr>
     <AddRecipe />
-    <hr>
     <ContactForm />
-    <hr>
     <FooterSection />
   </div>
 </template>

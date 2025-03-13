@@ -41,17 +41,13 @@ const submitForm = () => {
 </script>
 
 <style scoped>
-/* Postavljamo osnovni font na sans-serif */
-* {
-  font-family: 'Arial', sans-serif;
-}
 
 .contact-container {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  min-height: 100vh;
+  min-height: 70vh;
   background: white;
   padding: 20px;
 }
@@ -133,7 +129,6 @@ const submitForm = () => {
   background: #0056b3;
 }
 
-/* Responsivnost */
 @media (max-width: 768px) {
   .form-row {
     flex-direction: column;

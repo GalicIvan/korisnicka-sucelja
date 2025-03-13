@@ -24,7 +24,7 @@
 }
 
 body {
-  /* font-family: 'Lato', serif; */
+  font-family: 'Lato', serif;
   background-color: rgb(240, 246, 213);
   color: var(--on-app-bg);
   height: 100vh;

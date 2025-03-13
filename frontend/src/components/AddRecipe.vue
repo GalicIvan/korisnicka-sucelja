@@ -110,17 +110,9 @@ const saveRecipe = async () => {
 </script>
 
 <style scoped>
-/* Postavljanje modernog fonta */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
-
-body {
-  font-family: 'Poppins', sans-serif;
-}
-
-/* Wrapper za centriranje dugmeta i formu */
 .wrapper {
   height: 30rem;
-  background-color: #fcd34d; /* Žuta boja pozadine */
+  background-color: #fcd34d;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -130,7 +122,6 @@ body {
   padding: 2rem;
 }
 
-/* Header tekst iznad dugmeta */
 .header-text {
   color: #1f2937;
 }
@@ -138,7 +129,7 @@ body {
 .main-title {
   font-size: 2.5rem;
   font-weight: 600;
-  color: #1f2937; /* Tamno siva */
+  color: #1f2937;
   margin-bottom: 0.5rem;
 }
 

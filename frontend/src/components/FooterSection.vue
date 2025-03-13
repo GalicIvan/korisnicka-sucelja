@@ -17,7 +17,6 @@
   text-align: center;
   padding: 15px;
   width: 100%;
-  position: absolute;
   bottom: 0;
   font-size: 14px;
   box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
