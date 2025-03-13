@@ -1,3 +1,8 @@
+<script setup lang="ts">
+import AppHeader from './AppHeader.vue';
+
+</script>
+
 <template>
   <div class="h-screen bg-yellow-100 flex justify-center items-center">
     <div class="kitchen">
@@ -6,15 +11,17 @@
       </div>
     </div>
   </div>
+  <AppHeader></AppHeader>
 
-  <header class="header">
+
+  <!-- <header class="header">
     <nav class="nav">
       <ul>
         <li><a href="#">Naši recepti</a></li>
         <li><a href="#">O nama</a></li>
       </ul>
     </nav>
-  </header>
+  </header> -->
 </template>
 
 <style scoped>

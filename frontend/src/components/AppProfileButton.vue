@@ -1,39 +1,34 @@
 <script setup>
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-import { faArrowDown, faArrowUp } from '@fortawesome/free-solid-svg-icons';
-import { ref } from 'vue';
+import { faArrowDown } from '@fortawesome/free-solid-svg-icons';
 import { useUserStore } from '@/stores/user';
 import { useRouter } from 'vue-router';
 
 const router = useRouter();
 const userStore = useUserStore();
 
-const isDropdownOpen = ref(false);
-
 function logout() {
-  localStorage.clear('token');
+  // Ukloni samo token iz localStorage
+  localStorage.removeItem('token');
 
-  router.push({
-    name: 'AuthPage',
-  });
+  // Preusmeri na stranicu za autentifikaciju (AuthPage)
+  router.push('/auth');
+
 }
+
 </script>
 
 <template>
-  <el-dropdown @visible-change="isDropdownOpen = !isDropdownOpen" trigger="click">
+  <div class="profile-menu">
     <button class="btn">
       <img src="@/assets/img/profile.jpg" alt="Profile icon" class="profile" />
-      <FontAwesomeIcon v-if="!isDropdownOpen" :icon="faArrowDown" class="icon" />
-      <FontAwesomeIcon v-else :icon="faArrowUp" class="icon" />
+      <FontAwesomeIcon :icon="faArrowDown" class="icon" />
     </button>
-
-    <template #dropdown>
-      <el-dropdown-menu class="profile-menu">
-        <el-dropdown-item>{{ userStore.currentUser.firstName }}</el-dropdown-item>
-        <el-dropdown-item divided @click="logout">Logout</el-dropdown-item>
-      </el-dropdown-menu>
-    </template>
-  </el-dropdown>
+    <div class="menu-items">
+      <div>{{ userStore.currentUser.firstName }}</div>
+      <div @click="logout" class="logout-btn">Logout</div>
+    </div>
+  </div>
 </template>
 
 <style lang="css" scoped>
@@ -53,5 +48,27 @@ function logout() {
 .icon {
   color: #fff;
   font-size: 13px;
+}
+
+.profile-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.menu-items {
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  width: 200px;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+.logout-btn {
+  cursor: pointer;
+  color: red;
+  margin-top: 10px;
+  font-weight: bold;
 }
 </style>
