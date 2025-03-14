@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper">
+  <div class="wrapper" id="addRecipe">
     <!-- Tekst iznad dugmeta za dodavanje recepta -->
     <div class="header-text">
       <h1 class="main-title">Dobrodošli u naš receptni kutak!</h1>

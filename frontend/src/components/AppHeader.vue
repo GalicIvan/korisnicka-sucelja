@@ -1,6 +1,4 @@
 <script setup>
-// import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-// import { faMagnifyingGlass, faBell } from '@fortawesome/free-solid-svg-icons';
 import { ref, onMounted, onUnmounted } from 'vue';
 import AppProfileButton from './AppProfileButton.vue';
 
@@ -30,20 +28,14 @@ onUnmounted(() => {
     :class="{ 'header--background': showBackground }"
   >
     <div class="flex items-center" style="gap: 80px">
-      <!-- <img src="@/assets/img/logo.png" alt="Logo" class="logo" /> -->
       <div class="flex gap-sm">
-        <div class="link"><a href="#top">Home</a></div>
+        <div class="link"><a href="#">Home</a></div>
         <div class="link"><a href="#recipes">Naši recepti</a></div>
-        <div class="link">Tvoje ideje!</div>
-        <div class="link"><a href="#footer">Forum</a></div>
-        <!-- <div class="link">My List</div>
-        <div class="link">Browser by languages</div> -->
+        <div class="link"><a href="#addRecipe">Tvoje ideje!</a></div>
+        <div class="link"><a href="#contact">Kontakt</a></div>
       </div>
     </div>
     <div class="flex items-center gap-md">
-      <!-- <FontAwesomeIcon :icon="faMagnifyingGlass" class="icon" style="font-size: 20px" />
-      <div class="link">Kids</div>
-      <FontAwesomeIcon :icon="faBell" class="icon" /> -->
       <AppProfileButton />
     </div>
   </header>

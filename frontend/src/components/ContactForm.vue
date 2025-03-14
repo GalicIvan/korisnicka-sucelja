@@ -1,5 +1,5 @@
 <template>
-  <div class="contact-container">
+  <div class="contact-container" id="contact">
     <div class="contact-form">
       <h2>Kontaktirajte nas</h2>
       <form @submit.prevent="submitForm">
