@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper">
+  <div id="recipes" class="wrapper">
     <!-- Naslov i tekst iznad kartica -->
     <div class="header-text">
       <h1 class="main-title">Istražite naše recepte</h1>
@@ -30,7 +30,11 @@
         <div class="modal-section">
           <h4 class="modal-subtitle">Sastojci:</h4>
           <div class="ingredient-container">
-            <div v-for="(ingredient, index) in selectedRecipe?.ingredients" :key="index" class="ingredient-tile">
+            <div
+              v-for="(ingredient, index) in selectedRecipe?.ingredients"
+              :key="index"
+              class="ingredient-tile"
+            >
               <p>{{ ingredient }}</p>
             </div>
           </div>
@@ -40,7 +44,9 @@
         <div class="modal-section">
           <h4 class="modal-subtitle">Upute:</h4>
           <ol class="instruction-list">
-            <li v-for="(instruction, index) in selectedRecipe?.instructions" :key="index">{{ instruction }}</li>
+            <li v-for="(instruction, index) in selectedRecipe?.instructions" :key="index">
+              {{ instruction }}
+            </li>
           </ol>
         </div>
       </div>
@@ -56,30 +62,29 @@
   </div>
 </template>
 
-
 <script setup>
-import { ref, onMounted } from 'vue'
-import { useRecipeStore } from '@/stores/RecipeStore'
+import { ref, onMounted } from 'vue';
+import { useRecipeStore } from '@/stores/RecipeStore';
 
-const selectedRecipe = ref(null)
-const isDialogOpen = ref(false)
-const recipeStore = useRecipeStore()
+const selectedRecipe = ref(null);
+const isDialogOpen = ref(false);
+const recipeStore = useRecipeStore();
 
 onMounted(async () => {
-  await recipeStore.loadRecipes()
-})
+  await recipeStore.loadRecipes();
+});
 
 const openRecipeDialog = (recipe) => {
-  selectedRecipe.value = recipe
-  isDialogOpen.value = true
-}
+  selectedRecipe.value = recipe;
+  isDialogOpen.value = true;
+};
 
 const deleteRecipe = async (id) => {
   if (id) {
-    await recipeStore.deleteRecipeById(id)
-    isDialogOpen.value = false  // Zatvori modal nakon brisanja
+    await recipeStore.deleteRecipeById(id);
+    isDialogOpen.value = false; // Zatvori modal nakon brisanja
   }
-}
+};
 </script>
 
 <style scoped>
@@ -135,7 +140,9 @@ body {
   background-color: white;
   border-radius: 16px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
   cursor: pointer;
   overflow: hidden;
 }
@@ -218,7 +225,9 @@ body {
 }
 
 /* Stilovi za dugme u modalnom dijalogu */
-.close-btn, .delete-button, .add-ingredient-btn {
+.close-btn,
+.delete-button,
+.add-ingredient-btn {
   background-color: #4caf50;
   color: white;
   padding: 12px 20px;
@@ -229,7 +238,9 @@ body {
   font-weight: 600;
 }
 
-.close-btn:hover, .delete-button:hover, .add-ingredient-btn:hover {
+.close-btn:hover,
+.delete-button:hover,
+.add-ingredient-btn:hover {
   background-color: #388e3c;
 }
 
@@ -273,5 +284,3 @@ body {
   background-color: #0a58ca;
 }
 </style>
-
-

@@ -1,6 +1,6 @@
 <script setup>
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-import { faMagnifyingGlass, faBell } from '@fortawesome/free-solid-svg-icons';
+// import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+// import { faMagnifyingGlass, faBell } from '@fortawesome/free-solid-svg-icons';
 import { ref, onMounted, onUnmounted } from 'vue';
 import AppProfileButton from './AppProfileButton.vue';
 
@@ -30,20 +30,20 @@ onUnmounted(() => {
     :class="{ 'header--background': showBackground }"
   >
     <div class="flex items-center" style="gap: 80px">
-      <img src="@/assets/img/logo.png" alt="Logo" class="logo" />
+      <!-- <img src="@/assets/img/logo.png" alt="Logo" class="logo" /> -->
       <div class="flex gap-sm">
-        <div class="link">Home</div>
-        <div class="link">TV Shows</div>
-        <div class="link">Movies</div>
-        <div class="link">Latest</div>
-        <div class="link">My List</div>
-        <div class="link">Browser by languages</div>
+        <div class="link"><a href="#top">Home</a></div>
+        <div class="link"><a href="#recipes">Naši recepti</a></div>
+        <div class="link">Tvoje ideje!</div>
+        <div class="link"><a href="#footer">Forum</a></div>
+        <!-- <div class="link">My List</div>
+        <div class="link">Browser by languages</div> -->
       </div>
     </div>
     <div class="flex items-center gap-md">
-      <FontAwesomeIcon :icon="faMagnifyingGlass" class="icon" style="font-size: 20px" />
+      <!-- <FontAwesomeIcon :icon="faMagnifyingGlass" class="icon" style="font-size: 20px" />
       <div class="link">Kids</div>
-      <FontAwesomeIcon :icon="faBell" class="icon" />
+      <FontAwesomeIcon :icon="faBell" class="icon" /> -->
       <AppProfileButton />
     </div>
   </header>
@@ -70,14 +70,26 @@ onUnmounted(() => {
   cursor: pointer;
   transition: color 0.4s;
   font-size: 13px;
+  margin-right: 25px;
 }
 
 .link:hover {
-  color: #d1d5db;
+  color: #000000;
 }
 
 .icon {
   color: #fff;
   font-size: 13px;
+}
+
+.link a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.4s;
+  cursor: pointer;
+}
+
+.link a:hover {
+  color: #000000;
 }
 </style>

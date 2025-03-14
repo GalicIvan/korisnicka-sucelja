@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import AppHeader from './AppHeader.vue';
-
 </script>
 
 <template>
@@ -12,7 +11,6 @@ import AppHeader from './AppHeader.vue';
     </div>
   </div>
   <AppHeader></AppHeader>
-
 
   <!-- <header class="header">
     <nav class="nav">
@@ -62,7 +60,7 @@ div {
   color: rgb(104, 104, 104);
   padding: 50px 20px;
   background-color: rgba(255, 255, 255, 0.3);
-  border-radius: 100px;
+  border-radius: 50px;
   max-width: 800px;
   margin: auto;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 5);
